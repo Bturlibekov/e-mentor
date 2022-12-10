@@ -1,0 +1,1 @@
+style="background-image: url(./img/mentor-02.png);" data-bg="./img/mentor-02.png" data-bg-webp="./img/mentor-02.webp"

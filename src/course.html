@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include("html/sections/_head.html", { title: "Курсы" })
+
+<body>
+  @@include("html/sections/_header.html", {class: "header--course"})
+  @@include("html/sections/_breadcrumbs.html", {})
+  <main class="main__page">
+    @@include("html/sections/_article.html")
+    @@include("html/sections/_numbers--course.html")
+    @@include("html/sections/_info--course.html")
+    @@include("html/sections/_program.html")
+    @@include("html/sections/_banner--course.html")
+    @@include("html/sections/_faq.html")
+  </main>
+  @@include("html/sections/_footer.html", {})
+  <script src="./js/app.min.js"></script>
+</body>
+
+</html>

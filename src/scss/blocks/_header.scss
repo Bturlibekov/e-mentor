@@ -1,0 +1,244 @@
+@import './base/vars';
+@import './base/mixins';
+
+.header {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+// .header--fixed {
+//     position: fixed;
+// }
+
+.header-menu {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.header-logo {
+    display: none;
+}
+
+.menu-list {
+    display: flex;
+}
+
+.menu-item {
+    position: relative;
+    height: 24px;
+    margin-right: 40px;
+
+    &:last-child {
+        margin-right: 0px;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 0px;
+        display: block;
+        border-top: 3px dashed #FA9F42;
+        opacity: 0;
+    }
+}
+
+.menu-link {
+    position: relative;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 100%;
+    color: #FDFDFD;
+}
+
+.menu-item:hover {
+    &::after {
+        opacity: 1;
+        transition: all 800ms ease 0s;
+    }
+}
+
+.toggle {
+    display: none;
+}
+
+/* Header Course Page Style */
+
+.header--course {
+    position: relative;
+}
+
+.header--course .header-logo {
+    display: block;
+}
+
+.header--course .menu-link {
+    color: #353A5A;
+}
+
+.header--course .header-menu {
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Header Course Page Style */
+
+/* Media */
+@media (min-width: 1900px) {
+    .menu-link {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-menu {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin-top: 0px;
+        padding: 30px 15px 30px 15px;
+        justify-content: space-between;
+    }
+
+    .header-logo {
+        display: block;
+
+        img {
+            width: 170px;
+            height: 24px;
+        }
+    }
+
+    .menu-bar {
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        top: 0px;
+        left: -100%;
+        transition: left 300ms ease 0s;
+        background-color: rgba(0, 0, 0, .8);
+
+        &.--active {
+            left: 0;
+        }
+    }
+
+    .menu-list {
+        max-width: 300px;
+        height: 100vh;
+        padding: 30px 15px 30px 15px;
+        display: block;
+        overflow: auto;
+        background-color: #FA9F42;
+    }
+
+    .menu-item {
+        width: max-content;
+        margin-right: 0px;
+        margin-bottom: 15px;
+
+        &:last-child {
+            margin-bottom: 0px;
+        }
+
+        &::after {
+            border-top: 3px dashed #10B582;
+        }
+    }
+
+    .menu-link {
+        font-size: 20px;
+    }
+
+    .toggle {
+        position: relative;
+        width: 30px;
+        height: 24px;
+        display: block;
+
+        span,
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            transition: all 300ms ease 0s;
+            background-color: #fff;
+        }
+
+        span {
+            opacity: 1;
+        }
+
+        &::before {
+            top: 1px;
+        }
+
+        &::after {
+            bottom: 0;
+        }
+    }
+
+    .toggle.--active {
+        span {
+            opacity: 0;
+        }
+
+        &::before {
+            top: 50%;
+            transform: translate(0px, -50%) rotate(45deg);
+        }
+
+        &::after {
+            bottom: 50%;
+            transform: translate(0px, 50%) rotate(-45deg);
+        }
+    }
+}
+
+/* Media */
+
+/* Header Course Page Style */
+/* Media */
+
+@media (max-width: 768px) {
+    .header--course {
+        .header-menu {
+            position: static;
+            padding: 30px 0 30px 0;
+        }
+
+        .menu-link {
+            color: #fff;
+        }
+
+        .toggle {
+
+            span,
+            &::before,
+            &::after {
+                background-color: #353A5A;
+            }
+
+            &.--active {
+
+                span,
+                &::before,
+                &::after {
+                    background-color: #fff;
+                }
+            }
+        }
+    }
+}
+
+/* Media */
+/* Header Course Page Style */

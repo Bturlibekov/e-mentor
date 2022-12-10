@@ -1,0 +1,131 @@
+@import './base/vars';
+@import './base/mixins';
+
+.accordion {
+    max-width: 100%;
+    position: relative;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 5px 5px 30px rgba(101, 101, 101, 0.12);
+    background: #FDFDFD;
+
+    &:last-child {
+        margin: 0;
+    }
+
+    &.--active .accordion__icon::after {
+        content: "\e903";
+    }
+}
+
+.accordion__title {
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 130%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    cursor: pointer;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: #353A5A;
+}
+
+.accordion__icon {
+    width: 33px;
+    height: 33px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px dashed #10B582;
+    color: #10B582;
+
+    &::after {
+        content: "\e904";
+        font-size: 15px;
+        font-family: 'icon' !important;
+        speak: never;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 0;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+.accordion__content {
+    position: relative;
+    overflow: hidden;
+    max-height: 0;
+    transform: translate(0px, -15px);
+    transition: all 300ms;
+}
+
+.accordion__desc {
+    max-width: 700px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 130%;
+    padding: 0px 30px 30px 30px;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: #353A5A;
+}
+
+@media (min-width: 1900px) {
+    .accordion__title {
+        font-size: 26px;
+    }
+
+    .accordion__desc {
+        max-width: 850px;
+        font-size: 20px;
+        line-height: 150%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .accordion__title {
+        font-size: 20px;
+        padding: 15px;
+    }
+
+    .accordion__desc {
+        font-size: 12px;
+        padding: 10px 10px 10px 10px;
+    }
+
+    .accordion__icon {
+        width: 20px;
+        height: 20px;
+
+        &::after {
+            font-size: 10px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .accordion {
+        margin-bottom: 15px;
+    }
+
+    .accordion__title {
+        font-size: 16px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 540px) {
+    .accordion__title {
+        font-size: 14px;
+    }
+
+    .accordion__desc {
+        font-size: 10px;
+    }
+}
